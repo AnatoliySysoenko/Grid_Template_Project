@@ -10,11 +10,22 @@
   transition: background-color 0.25s;
 
   &.btn--light {
-    font-size: 1.125rem;
-    width: 250px;
-    height: 60px;
     background-color: rgba($color-light, 0.1);
     border: 2px solid $color-light;
+
+    @include lg-min {
+      font-size: 1.125rem;
+      width: 250px;
+      height: 60px;
+    }
+    @include lg-md {
+      width: 200px;
+      height: 50px;
+    }
+    @include md {
+      width: 170px;
+      height: 40px;
+    }
   }
 
   &.btn--primary {
@@ -23,6 +34,9 @@
     height: 60px;
     background-color: rgba($color-primary, 0.8);
     border: 2px solid $color-primary;
+    @include sm {
+      width: 100%;
+    }
   }
 
   &:hover {
