@@ -16,5 +16,10 @@
   &__link {
     font-size: 1.125rem;
     padding: $gap $gap-sm;
+    transition: color 0.25s;
+
+    &:hover {
+      color: $color-accent;
+    }
   }
 }

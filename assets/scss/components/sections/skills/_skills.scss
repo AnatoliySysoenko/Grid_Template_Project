@@ -1,0 +1,23 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+$local-gap: calc($gap-x2 / 3);
+
+.skills {
+  padding: $gap-sm;
+
+  &__container {
+    display: grid;
+    gap: $gap-sm;
+    grid-auto-rows: calc(33.3333vh - #{$local-gap});
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+  }
+
+  &__actions {
+    margin-top: $gap;
+    margin-bottom: $gap-lg;
+    display: flex;
+    justify-content: center;
+  }
+}
