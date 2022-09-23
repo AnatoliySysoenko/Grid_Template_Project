@@ -2,8 +2,18 @@
 @use "../../mixins" as *;
 
 .posts {
-  padding-top: $gap-x5;
-  padding-bottom: $gap-x5;
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
 
   &__container {
     @extend %container;
@@ -16,8 +26,21 @@
   &__grid {
     display: grid;
     gap: $gap;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+    @include lg-min {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+    }
+    @include lg-md {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+    }
+    @include md-sm {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+    }
+    @include sm {
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    }
   }
 
   &__actions {
