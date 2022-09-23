@@ -52,11 +52,20 @@ h2 {
   @include sm {
     text-align: center;
   }
+}
 
+h3 {
+  color: $color-gray;
+  letter-spacing: 0.05em;
+  font-size: 1.125rem;
 }
 
 a {
   text-decoration: none;
   color: $color-light;
+}
+
+p {
+  color: $color-gray;
 }
 

@@ -1,0 +1,92 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.posts {
+  padding-top: $gap-x5;
+  padding-bottom: $gap-x5;
+
+  &__container {
+    @extend %container;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: $gap;
+  }
+}
+
+.post-item {
+  background-color: #f2f2f2;
+  transition: background-color 0.5s;
+
+  &__link {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 300px 1fr;
+    overflow: hidden;
+  }
+
+  &__image {
+    background-color: $color-primary;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+  }
+
+  &__caption {
+    display: grid;
+    padding: $gap;
+    align-content: center;
+
+    h3 {
+      text-align: center;
+      font-family: $font-header;
+      transition: color 0.25s;
+    }
+
+    p {
+      text-align: center;
+      transition: color 0.25s;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    background-color: #d8d8d8;
+
+    img {
+      transform: scale(1.1);
+    }
+
+    h3,
+    p {
+      color: $color-primary;
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .post-item:nth-of-type(#{$i}) {
+    grid-area: p#{$i};
+  }
+}
