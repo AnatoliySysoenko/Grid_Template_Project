@@ -2,8 +2,9 @@
 @use "../../mixins" as *;
 
 .footer {
-  background-color: $color-primary;
   padding: 50px $gap 70px;
+
+  background-color: $color-primary;
 
   &__container {
     @extend %container;
@@ -11,14 +12,19 @@
 
   &__social {
     position: relative;
+
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+
     margin-bottom: $gap-x2;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
 
     a {
       display: block;
+
       padding: $gap-sm;
+
       transition: color 0.5s;
 
       &:hover {
@@ -34,9 +40,12 @@
       position: absolute;
       bottom: -$gap;
       left: calc(50% - 37.5px);
+
       width: 75px;
       height: 2px;
+
       content: "";
+
       background-color: rgba($color-light, 0.1);
     }
   }
@@ -45,15 +54,19 @@
     text-align: center;
 
     span:first-of-type {
-      font-weight: 100;
-      letter-spacing: 0.33em;
       margin-right: -0.5em;
+
+      letter-spacing: 0.33em;
+
+      font-weight: 100;
     }
 
     span:last-of-type {
-      font-weight: 700;
-      color: $color-gray-light;
       letter-spacing: 0.05em;
+
+      color: $color-gray-light;
+
+      font-weight: 700;
     }
   }
 }

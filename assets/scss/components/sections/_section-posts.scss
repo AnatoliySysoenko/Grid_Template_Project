@@ -25,18 +25,19 @@
 
   &__grid {
     display: grid;
+
     gap: $gap;
     @include lg-min {
-      grid-template-columns: repeat(4, 1fr);
       grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+      grid-template-columns: repeat(4, 1fr);
     }
     @include lg-md {
-      grid-template-columns: repeat(3, 1fr);
       grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+      grid-template-columns: repeat(3, 1fr);
     }
     @include md-sm {
-      grid-template-columns: repeat(2, 1fr);
       grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+      grid-template-columns: repeat(2, 1fr);
     }
     @include sm {
       grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
@@ -46,50 +47,59 @@
   &__actions {
     display: flex;
     justify-content: center;
+
     width: 100%;
     margin-top: $gap;
   }
 }
 
 .post-item {
-  background-color: #f2f2f2;
   transition: background-color 0.5s;
+
+  background-color: #f2f2f2;
 
   &__link {
     display: grid;
-    height: 100%;
-    grid-template-rows: 300px 1fr;
     overflow: hidden;
+
+    height: 100%;
+
+    grid-template-rows: 300px 1fr;
   }
 
   &__image {
-    background-color: $color-primary;
     display: flex;
+    overflow: hidden;
     align-content: center;
     justify-content: center;
-    overflow: hidden;
+
+    background-color: $color-primary;
 
     img {
       width: 100%;
-      object-fit: cover;
+
       transition: transform 0.5s;
+
+      object-fit: cover;
     }
   }
 
   &__caption {
     display: grid;
-    padding: $gap;
     align-content: center;
 
+    padding: $gap;
+
     h3 {
-      text-align: center;
-      font-family: $font-header;
       transition: color 0.25s;
+      text-align: center;
+
+      font-family: $font-header;
     }
 
     p {
-      text-align: center;
       transition: color 0.25s;
+      text-align: center;
     }
   }
 

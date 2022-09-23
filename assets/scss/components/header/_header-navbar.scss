@@ -5,25 +5,35 @@
   letter-spacing: 0.1em;
 
   &__btn {
-    width: 30px;
-    height: 22.5px;
     position: relative;
+
+    width: $gap-lg;
+    height: 22.5px;
     margin: $gap 0 $gap auto;
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
+
     cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
+
+    @include md-min {
+      display: none;
+    }
 
     &-row {
-      display: block;
       position: absolute;
-      height: 3px;
-      width: 100%;
-      background: $color-light;
-      border-radius: 3px;
-      opacity: 1;
       left: 0;
+
+      display: block;
+
+      width: 100%;
+      height: 3px;
+
+      transition: 0.25s ease-in-out;
       transform: rotate(0deg);
-      transition: .25s ease-in-out;
+
+      opacity: 1;
+      border-radius: 3px;
+      background: $color-light;
 
       &:nth-child(1) {
         top: 0;
@@ -41,22 +51,21 @@
     &--active span {
       &:nth-child(1) {
         top: 9px;
+
         transform: rotate(135deg);
       }
 
       &:nth-child(2) {
-        opacity: 0;
         left: -30px;
+
+        opacity: 0;
       }
 
       &:nth-child(3) {
         top: 9px;
+
         transform: rotate(-135deg);
       }
-    }
-
-    @include md-min {
-      display: none;
     }
   }
 
@@ -64,21 +73,24 @@
     @include md-min {
       display: grid;
       justify-content: end;
+
       gap: $gap;
       grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
       @include unlist(0 (-$gap-sm) 0 0);
     }
-
     @include md {
-      display: none;
-      @include unlist;
-      @include box-shadow;
-
-      background-color: rgba($color-gray-dark, 0.9);
       position: absolute;
       top: 100%;
       right: $gap;
-      text-align: right
+
+      display: none;
+
+      text-align: right;
+
+      background-color: rgba($color-gray-dark, 0.9);
+
+      @include unlist;
+      @include box-shadow;
     }
   }
 
@@ -90,8 +102,11 @@
 
   &__link {
     display: block;
-    font-size: 1.125rem;
+
     transition: color 0.25s;
+
+    font-size: 1.125rem;
+
     @include md-min {
       padding: $gap $gap-sm;
     }

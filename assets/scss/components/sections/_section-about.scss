@@ -2,8 +2,9 @@
 @use "../../mixins" as *;
 
 .about {
-  background-color: $color-gray-light;
   letter-spacing: 0.055em;
+
+  background-color: $color-gray-light;
 
   @include lg-min {
     padding-top: $gap-x5;
@@ -13,27 +14,26 @@
     padding-top: $gap-x4;
     padding-bottom: $gap-x4;
   }
-
   @include md {
     padding-top: $gap-x3;
     padding-bottom: $gap-x3;
   }
 
   &__container {
-    @extend %container;
     display: grid;
 
+    @extend %container;
     @include lg-min {
-      grid-template-columns: 1fr 271px;
       gap: $gap-x5;
+      grid-template-columns: 1fr 271px;
     }
     @include lg-md {
-      grid-template-columns: 1fr 271px;
       gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
     }
     @include md-sm {
-      grid-template-columns: 1fr 236px;
       gap: $gap;
+      grid-template-columns: 1fr 236px;
     }
   }
 
@@ -44,6 +44,7 @@
 
     p {
       position: relative;
+
       @include lg-min {
         font-size: 1.125rem;
       }
@@ -55,10 +56,13 @@
       &::after {
         position: absolute;
         top: 0;
+
         width: 2px;
         height: 200px;
+
         content: "";
-        background-color: #D8D9DD;
+
+        background-color: #d8d9dd;
 
         @include lg-min {
           right: -50px;
@@ -75,8 +79,8 @@
 
   &__image {
     display: grid;
-    justify-content: center;
     align-content: center;
+    justify-content: center;
 
     img {
       max-width: 100%;

@@ -2,21 +2,24 @@
 @use "../mixins" as *;
 
 .btn {
-  padding: 0.5em 1em;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.1em;
+
+  padding: 0.5em 1em;
+
   transition: background-color 0.25s;
+  letter-spacing: 0.1em;
 
   &.btn--light {
-    background-color: rgba($color-light, 0.1);
     border: 2px solid $color-light;
+    background-color: rgba($color-light, 0.1);
 
     @include lg-min {
-      font-size: 1.125rem;
       width: 250px;
-      height: 60px;
+      height: $gap-x3;
+
+      font-size: 1.125rem;
     }
     @include lg-md {
       width: 200px;
@@ -24,16 +27,19 @@
     }
     @include md {
       width: 170px;
-      height: 40px;
+      height: $gap-x2;
     }
   }
 
   &.btn--primary {
-    font-size: 1.125rem;
     width: 350px;
-    height: 60px;
-    background-color: rgba($color-primary, 0.8);
+    height: $gap-x3;
+
     border: 2px solid $color-primary;
+    background-color: rgba($color-primary, 0.8);
+
+    font-size: 1.125rem;
+
     @include sm {
       width: 100%;
     }
