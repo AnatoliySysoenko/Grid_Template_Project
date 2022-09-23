@@ -3,15 +3,38 @@
 
 .about {
   background-color: $color-gray-light;
-  padding-top: 100px;
-  padding-bottom: 82px;
   letter-spacing: 0.055em;
+
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
 
   &__container {
     @extend %container;
     display: grid;
-    grid-template-columns: 1fr 271px;
-    gap: $gap-x5;
+
+    @include lg-min {
+      grid-template-columns: 1fr 271px;
+      gap: $gap-x5;
+    }
+    @include lg-md {
+      grid-template-columns: 1fr 271px;
+      gap: $gap-x2;
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 236px;
+      gap: $gap;
+    }
   }
 
   &__content {
@@ -21,28 +44,39 @@
 
     p {
       position: relative;
-      font-size: 1.125rem;
+      @include lg-min {
+        font-size: 1.125rem;
+      }
     }
 
     p:first-of-type {
       margin-top: -5px;
 
       &::after {
-        content: "";
-        height: 200px;
-        width: 2px;
         position: absolute;
         top: 0;
-        right: -50px;
+        width: 2px;
+        height: 200px;
+        content: "";
         background-color: #D8D9DD;
+
+        @include lg-min {
+          right: -50px;
+        }
+        @include lg-md {
+          right: -$gap;
+        }
+        @include md-sm {
+          right: -$gap-sm;
+        }
       }
     }
   }
 
   &__image {
-    display: flex;
+    display: grid;
     justify-content: center;
-    margin-top: 62px;
+    align-content: center;
 
     img {
       max-width: 100%;
